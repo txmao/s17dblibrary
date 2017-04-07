@@ -1,0 +1,12 @@
+source s17-library.sql
+pyuic4 -o ui.py ui.ui
+pyuic.py **.ui > **.py
+
+pyuic4 -o lms.py lms.ui
+
+delete from BORROWER where Card_id=1001;
+
+select * from BOOK_LOANS;
+delete from BOOK_LOANS where Loan_id=1;
+
+find . -name '*.pyc' -type f -delete
